@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{}
   gem.homepage      = ""
   gem.name          = "webservice_tester"
+  gem.files         = `git ls-files`.split("\n")
   gem.require_paths = ["lib"]
   gem.version       = WebserviceTester::VERSION
   gem.add_dependency "sinatra"
