@@ -44,7 +44,7 @@
   .examples
     %table
       %tbody
-        - WebserviceTester::EXAMPLES.each do |webservice_tester|
+        - WebserviceTester::EXAMPLES.call.each do |webservice_tester|
           %tr(data-tester="#{webservice_tester.to_json}")
             %td
               ⇐
