@@ -1,0 +1,55 @@
+-# coding: utf-8
+!!!5
+%html
+  %head
+    %script(language="javascript" src="webservice_tester/jquery.js")
+    %script(language="javascript" src="webservice_tester/beautifier.js")
+    %script(language="javascript" src="webservice_tester/webservice_tester.js")
+    %link(href="webservice_tester/webservice_tester.css" rel="stylesheet" type="text/css")
+%body
+  .request
+    .field
+      %label
+        URL
+      %input#url(type='text')
+    .field
+      %label
+        Method
+      .radio-group
+        .radio
+          %input#GET(type='radio' name='method' value='GET' checked) GET
+        .radio
+          %input#POST(type='radio' name='method' value='POST') POST
+        .radio
+          %input#PUT(type='radio' name='method' value='PUT') PUT
+        .radio
+          %input#DELETE(type='radio' name='method' value='DELETE') DELETE
+    .field
+      %label
+        Body:
+      %textarea#body
+    .actions
+      #send
+        .default Send
+        .loading Loading
+    %hr
+    .field
+      %label
+        Status Code:
+      %input#status-code(type='text')
+    .field
+      %label
+        Response:
+      %textarea#response-body
+  .examples
+    %table
+      %tbody
+        - WebserviceTester::EXAMPLES.each do |webservice_tester|
+          %tr(data-tester="#{webservice_tester.to_json}")
+            %td
+              ⇐
+            %td.method
+              = webservice_tester[:method]
+              = webservice_tester[:url]
+            %td.description= webservice_tester[:description]
+            %td.body= webservice_tester[:body]

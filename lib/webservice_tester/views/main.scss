@@ -1,0 +1,99 @@
+$orange: #A84B3A;
+$white: #FFF7F5;
+$yellow: #FF9F67;
+$black: #233138;
+$grey: #4C646B;
+
+body {
+  margin: 0px;
+  width: 100%;
+  background-color: $white;
+  color: $orange;
+}
+
+.request {
+  padding: 1%;
+  width: 18%;
+  float: left;
+  .field {
+    width: 98%;
+    margin-bottom: 10px;
+    label {
+      color: $orange;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .radio-group {
+      .radio {
+        color: $grey;
+        margin-right: 8%;
+        display: inline;
+      }
+    }
+    input[type=text], textarea {
+      width: 100%;
+    }
+    textarea {
+      height: 170px;
+    }
+  }
+  .actions {
+    #send {
+      text-align: center;
+      line-height: 30px;
+      -webkit-border-radius: 2px;
+      border: solid 1px $orange;
+      background-color: $yellow;
+      color: $orange;
+      font-size: 15px;
+      height: 30px;
+      width: 100%;
+      .loading {
+        margin-top: 4px;
+      }
+    }
+  }
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.examples {
+  padding: 1%;
+  width: 78%;
+  float: left;
+  table {
+    tr:hover {
+      cursor: pointer;
+    }
+    tr:first-child td:first-child {
+      -webkit-border-radius: 6px 0 0 0;
+    }
+    tr:first-child td:nth-last-of-type(2) {
+      -webkit-border-radius: 0 6px 0 0;
+    }
+    tr:last-child td:first-child {
+      -webkit-border-radius: 0 0 0 6px;
+    }
+    tr:last-child td:nth-last-of-type(2) {
+      -webkit-border-radius: 0 0 6px 0;
+    }
+    &, td, tr, th {
+      color: $white;
+      border-spacing: 0px;
+    }
+    td, tr, th {
+      padding: 8px;
+    }
+    tr {
+      background-color: $black;
+    }
+    tr:nth-child(even) {
+      background-color: $grey;
+    }
+    td.body {
+      display: none;
+    }
+  }
+}
