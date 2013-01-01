@@ -11,8 +11,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = WebserviceTester::VERSION
 
-  gem.add_dependency "sinatra"
-  gem.add_dependency "haml"
-  gem.add_dependency "sass"
-  gem.add_dependency "coffee-script"
+  gem.add_dependency "sinatra", ">= 1.3.3"
+  gem.add_dependency "haml", ">= 3.1.7"
+  gem.add_dependency "sass", ">= 3.2.3"
+  gem.add_dependency "coffee-script", ">= 2.2.0"
 end
