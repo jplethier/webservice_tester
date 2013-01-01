@@ -1,0 +1,1 @@
+require "webservice_tester/app"
