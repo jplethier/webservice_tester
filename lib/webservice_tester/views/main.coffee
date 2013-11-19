@@ -10,7 +10,7 @@ $ ->
     return false if $(this).find('.loading').is(":visible")
     url = $("#url").val()
     body = $("#body").val()
-    headers = $("headers").val()
+    headers = $("#headers").val()
     method = $("input[name='method']:checked").val()
     jsonBody = JSON.parse(body) if body
     jsonHeaders = JSON.parse(headers) if headers
