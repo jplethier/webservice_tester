@@ -10,9 +10,11 @@ $ ->
     return false if $(this).find('.loading').is(":visible")
     url = $("#url").val()
     body = $("#body").val()
+    headers = $("headers").val()
     method = $("input[name='method']:checked").val()
     jsonBody = JSON.parse(body) if body
-    $.ajax url: url, type: method, data: jsonBody, dataType: 'json', success: (data, status, req) ->
+    jsonHeaders = JSON.parse(headers) if headers
+    $.ajax url: url, headers: jsonHeaders, type: method, data: jsonBody, dataType: 'json', success: (data, status, req) ->
         $("#status-code").val req.status
         $("#response-body").val js_beautify  req.responseText
       , error: (xhr, ajaxOptions, thrownError) ->
@@ -23,3 +25,4 @@ $ ->
     $('#url').val $(this).data('tester').url
     $('#'+ $(this).data('tester').method).attr('checked', true);
     $('#body').val js_beautify $(this).data('tester').body
+    $('#headers').val js_beautify $(this).data('tester').headers
