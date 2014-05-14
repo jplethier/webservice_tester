@@ -53,7 +53,7 @@
       - if params[:versions].blank?
         - version = WebserviceTester.api_versions.first
 
-      = haml :webservice, version: version
+      = haml :webservice, locals: { version: version }
 
     - else
-      = haml :webservice, version: ''
+      = haml :webservice, locals: { version: '' }
