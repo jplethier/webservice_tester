@@ -51,7 +51,7 @@
         %a{ href: '?version='+version } version
 
       - if params[:versions].blank?
-        - version = WebserviceTester::API_VERSIONS.call.first
+        - version = WebserviceTester.api_versions.first
 
       = render 'webservice', version: version
 
