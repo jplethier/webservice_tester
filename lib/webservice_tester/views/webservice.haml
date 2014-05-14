@@ -3,7 +3,7 @@
     - if version.blank?
       - examples = WebserviceTester::EXAMPLES.call
     - else
-      - examples = WebserviceTester::EXAMPLES[version].call
+      - examples = WebserviceTester::EXAMPLES.call[version]
 
     - examples.each do |webservice_tester|
       %tr(data-tester="#{webservice_tester.to_json}")
