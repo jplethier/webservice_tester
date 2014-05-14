@@ -66,6 +66,7 @@ body {
 
   .version-links {
     a {
+      color: black;
       font-family: sans-serif;
       font-size: 21px;
       font-weight: normal;
@@ -78,11 +79,18 @@ body {
       background: gray;
 
       float: left;
-      margin: 0 5px;
+      margin: 0 -4px;
+      padding: 5px 15px;
+      z-index: 0;
 
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    a:first-child {
+      margin: 0;
+      margin-left: 4px;
     }
 
     a.active {
@@ -91,10 +99,13 @@ body {
       border: 1px solid black;
 
       font-weight: bold;
+
+      z-index: 1;
     }
   }
 
   table {
+    clear: both;
     margin: 10px 0;
 
     tr:hover {
