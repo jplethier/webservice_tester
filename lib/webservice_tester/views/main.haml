@@ -53,7 +53,7 @@
       - if params[:versions].blank?
         - version = WebserviceTester.api_versions.first
 
-      = render 'webservice', version: version
+      = haml 'webservice', version: version
 
     - else
-      = render 'webservice', version: ''
+      = haml 'webservice', version: ''
