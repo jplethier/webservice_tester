@@ -50,8 +50,10 @@
       - WebserviceTester.api_versions.each do |version|
         %a{ href: '?version='+version }= version
 
-      - if params[:versions].blank?
+      - if params[:version].blank?
         - version = WebserviceTester.api_versions.first
+      - else
+        - version = params[:version]
 
       = haml :webservice, locals: { version: version }
 
