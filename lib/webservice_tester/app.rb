@@ -6,8 +6,4 @@ module WebserviceTester
     get('/webservice_tester.css') { scss :main }
     get('/webservice_tester.js') { coffee :main }
   end
-
-  def api_versions
-    []
-  end
 end
