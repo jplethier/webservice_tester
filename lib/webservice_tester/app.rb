@@ -7,5 +7,7 @@ module WebserviceTester
     get('/webservice_tester.js') { coffee :main }
   end
 
-  API_VERSIONS = []
+  def api_versions
+    []
+  end
 end

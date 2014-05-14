@@ -46,8 +46,8 @@
         Response:
       %textarea#response-body
   .examples
-    - if !WebserviceTester::API_VERSIONS.call.blank?
-      - WebserviceTester::API_VERSIONS.call.each do |version|
+    - if !WebserviceTester.api_versions.blank?
+      - WebserviceTester.api_versions.each do |version|
         = link_to version, '?version='+version
 
       - if params[:versions].blank?
