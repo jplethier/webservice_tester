@@ -47,8 +47,9 @@
       %textarea#response-body
   .examples
     - if !WebserviceTester.api_versions.blank?
-      - WebserviceTester.api_versions.each do |version|
-        %a{ href: '?version='+version }= version
+      .version-links
+        - WebserviceTester.api_versions.each do |version|
+          %a{ href: '?version='+version, class: version == params[:version] ? 'active' : '' }= version
 
       - if params[:version].blank?
         - version = WebserviceTester.api_versions.first
