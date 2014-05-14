@@ -46,14 +46,14 @@
         Response:
       %textarea#response-body
   .examples
-    %table
-      %tbody
-        - WebserviceTester::EXAMPLES.call.each do |webservice_tester|
-          %tr(data-tester="#{webservice_tester.to_json}")
-            %td
-              ⇐
-            %td.method
-              = webservice_tester[:method]
-              = webservice_tester[:url]
-            %td.description= webservice_tester[:description]
-            %td.body= webservice_tester[:body]
+    - if !WebServiceTester::API_VERSIONS.call.blank?
+      - WebserviceTester::API_VERSIONS.call.each do |version|
+        = link_to version, '?version='+version
+
+      - if params[:versions].blank?
+        - version = WebserviceTester::API_VERSIONS.call.first
+
+      = render 'webservice', version: version
+
+    - else
+      = render 'webservice', version: ''

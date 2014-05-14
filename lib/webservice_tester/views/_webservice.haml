@@ -1,0 +1,16 @@
+%table
+  %tbody
+    - if version.blank?
+      - examples = WebserviceTester::EXAMPLES.call
+    - else
+      - examples = WebserviceTester::EXAMPLES[version].call
+
+    - examples.each do |webservice_tester|
+      %tr(data-tester="#{webservice_tester.to_json}")
+        %td
+          ⇐
+        %td.method
+          = webservice_tester[:method]
+          = webservice_tester[:url]
+        %td.description= webservice_tester[:description]
+        %td.body= webservice_tester[:body]
