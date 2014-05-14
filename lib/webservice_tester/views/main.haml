@@ -48,7 +48,7 @@
   .examples
     - if !WebserviceTester.api_versions.blank?
       - WebserviceTester.api_versions.each do |version|
-        %a{ href: '?version='+version } version
+        %a{ href: '?version='+version }= version
 
       - if params[:versions].blank?
         - version = WebserviceTester.api_versions.first
